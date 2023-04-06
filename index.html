@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>O'clock</title>
+</head>
+<body>
+    <header>
+        <h1 class="title">Clock</h1>
+    </header>
+    <div class="container">
+        <div class="wrapper_clock">
+            <span class="needle hour"></span>
+            <span class="needle minute"></span>
+            <span class="needle seconds"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <audio src="./audio/needleSeconds.mp3" controls class = "audio_seconds" autoplay></audio>
+    <div class="btn_control_audio">
+        <div class="progress">
+            <span class="status">
+                <i class='bx bxs-bell-ring audio_icon'></i>
+            </span>
+        </div>
+    </div>
+    <script src = "./app.js"></script>
+</body>
+</html>

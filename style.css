@@ -1,0 +1,98 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f9eaea;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+    font-size: 50px;
+    font-weight: bold;
+}
+.wrapper_clock {
+    width: 500px;
+    height:500px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    position: relative;
+    background-image: url('./img/pngwing.com.png');
+    background-color: rgb(214 213 209);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center
+}
+.needle {
+    position: absolute;
+    height: 2px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+.hour {
+    height: 6px;
+    width: calc(30% - 10px);
+    background: #000;
+}
+.minute {
+    height: 4px;
+    width: calc(35%);
+    background: #333;
+}
+.seconds {
+    width: calc(40% - 10px);
+    background: #fe0303;
+}
+.dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #333;
+    border-radius: 50%;
+}
+
+.btn_control_audio {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.progress {
+    width: 80px;
+    height: 40px;
+    border: 1px solid #333;
+    position: relative;
+    border-radius: 20px;
+}
+.status {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    width: 50%;
+    height: calc(100% - 4px);
+    background: #f50b0b;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.2s;
+}
+.audio_icon {
+    color: #fff;
+}
+.status.active {
+    left: unset;
+    right: 2px;
+}
+
