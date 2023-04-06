@@ -4,12 +4,11 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #f9eaea;
+    background-color: #cbddde;
 }
 .container {
     display: flex;
     justify-content: center;
-    min-height: 100vh;
 }
 .title {
     display: flex;
@@ -28,7 +27,7 @@ body {
     justify-content:center;
     position: relative;
     background-image: url('./img/pngwing.com.png');
-    background-color: rgb(214 213 209);
+    background-color: rgb(248, 242, 220);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center
@@ -94,5 +93,8 @@ body {
 .status.active {
     left: unset;
     right: 2px;
+}
+.audio_seconds {
+    display: none;
 }
 
