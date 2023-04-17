@@ -34,24 +34,22 @@ window.onload = function() {
 }
 
 function render() {
-    const [hour, minute, second] = myTime;
-    const s = 6 * second + 90;
+    const s = 6 * myTime.seconds + 90;
     seconds.style.transform = ("rotate(" + s + "deg) translateX(-35%)");
-    const m = 6 * minute+ 90 + second*0.1;
+    const m = 6 * myTime.minute+ 90 + myTime.seconds*0.1;
     minute.style.transform = ("rotate(" + m + "deg) translateX(-35%)");
-    const h = 30 * (hour - 12) + 90 + minute * 0.5;
+    const h = 30 * (myTime.hour - 12) + 90 + myTime.minute * 0.5;
     hour.style.transform = ("rotate(" + h + "deg) translateX(-35%)");
 }
 
 function handleInfo() {
-    const [hour, minute, second] = myTime;
-    myTime.setSecond(second++);
+    myTime.setSecond(myTime.seconds++);
     if(myTime.seconds == 60) {
-        myTime.setMinute(minute++);
+        myTime.setMinute(myTime.minute++);
         myTime.setSecond(0);
     }
     if(myTime.minute == 60) {
-        myTime.setHour(hour++);
+        myTime.setHour(myTime.hour++);
         myTime.setMinute(0);
         if(myTime.hour == 24) {
             myTime.setHour(0);
