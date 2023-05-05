@@ -6,23 +6,11 @@ let hour = document.querySelector(".hour"),
     btnControlAudio = document.querySelector(".status"),
     iconStatusAudio = document.querySelector(".audio_icon");
 
-const date = new Date();
-const myTime = {
-    hour: date.getHours(),
-    minute: date.getMinutes(),
-    seconds: date.getSeconds(),
-    setHour: function(currentHour) {
-        this.hour = currentHour;
-    },
-    setMinute: function(currentMinute) {
-        this.minute = currentMinute;
-    },
-    setSecond: function(currentSecond) {
-        this.second = currentSecond;
-    }
-}
-
-let isAudio;
+var date = new Date();
+var getHour = date.getHours();
+var getMinute = date.getMinutes();
+var getSeconds = date.getSeconds();
+var isAudio;
 window.onload = function() {
     render();
     if(localStorage.getItem("isAudio") != null) {
@@ -33,28 +21,27 @@ window.onload = function() {
         localStorage.setItem("isAudio", JSON.stringify(false));
     }
 }
-
 function render() {
-    var s = 6 * getSeconds + 90;
+    const s = 6 * getSeconds + 90;
     seconds.style.transform = ("rotate(" + s + "deg) translateX(-35%)");
-    var m = 6 * getMinute + 90 + getSeconds*0.1;
+    const m = 6 * getMinute + 90 + getSeconds*0.1;
     minute.style.transform = ("rotate(" + m + "deg) translateX(-35%)");
-    var h = 30 * (getHour - 12) + 90 + getMinute * 0.5;
+    const h = 30 * (getHour - 12) + 90 + getMinute * 0.5;
     hour.style.transform = ("rotate(" + h + "deg) translateX(-35%)");
     fullTimeText.innerHTML = getHour  + " : " + getMinute.toString().padStart(2, '0') + " : " + getSeconds.toString().padStart(2, '0');
 }
 
 function handleInfo() {
-    myTime.setSecond(myTime.seconds++);
-    if(myTime.seconds == 60) {
-        myTime.setMinute(myTime.minute++);
-        myTime.setSecond(0);
+    getSeconds++;
+    if(getSeconds == 60) {
+        getMinute++;
+        getSeconds = 0;
     }
-    if(myTime.minute == 60) {
-        myTime.setHour(myTime.hour++);
-        myTime.setMinute(0);
-        if(myTime.hour == 24) {
-            myTime.setHour(0);
+    if(getMinute == 60) {
+        getHour++;
+        getMinute = 0;
+        if(getHour == 24) {
+            getHour = 0;
         }
     }
 }

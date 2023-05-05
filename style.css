@@ -4,13 +4,15 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #f9eaea;
+    background-color: #cbddde;
+    background: url('./img/backgound.jpg');
+    background-size: cover;
 }
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
+    align-items: center;
 }
 .title {
     display: flex;
@@ -105,9 +107,6 @@ body {
 .status.active {
     left: unset;
     right: 2px;
-}
-.audio_seconds {
-    display: none;
 }
 
 .audio_seconds {
