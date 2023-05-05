@@ -1,6 +1,7 @@
 let hour = document.querySelector(".hour"),
     minute = document.querySelector(".minute"),
     seconds = document.querySelector(".seconds"),
+    fullTimeText = document.querySelector(".full_time"),
     audioSeconds = document.querySelector(".audio_seconds"),
     btnControlAudio = document.querySelector(".status"),
     iconStatusAudio = document.querySelector(".audio_icon");
@@ -21,12 +22,13 @@ window.onload = function() {
     }
 }
 function render() {
-    var s = 6 * getSeconds + 90;
+    const s = 6 * getSeconds + 90;
     seconds.style.transform = ("rotate(" + s + "deg) translateX(-35%)");
-    var m = 6 * getMinute + 90 + getSeconds*0.1;
+    const m = 6 * getMinute + 90 + getSeconds*0.1;
     minute.style.transform = ("rotate(" + m + "deg) translateX(-35%)");
-    var h = 30 * (getHour - 12) + 90 + getMinute * 0.5;
+    const h = 30 * (getHour - 12) + 90 + getMinute * 0.5;
     hour.style.transform = ("rotate(" + h + "deg) translateX(-35%)");
+    fullTimeText.innerHTML = getHour  + " : " + getMinute.toString().padStart(2, '0') + " : " + getSeconds.toString().padStart(2, '0');
 }
 
 function handleInfo() {

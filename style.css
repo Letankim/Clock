@@ -4,12 +4,15 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #f9eaea;
+    background-color: #cbddde;
+    background: url('./img/backgound.jpg');
+    background-size: cover;
 }
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
+    align-items: center;
 }
 .title {
     display: flex;
@@ -19,8 +22,8 @@ body {
     font-weight: bold;
 }
 .wrapper_clock {
-    width: 500px;
-    height:500px;
+    width: 430px;
+    height:430px;
     border-radius: 50%;
     border: 1px solid #333;
     display: flex;
@@ -28,7 +31,7 @@ body {
     justify-content:center;
     position: relative;
     background-image: url('./img/pngwing.com.png');
-    background-color: rgb(214 213 209);
+    background-color: rgb(248, 242, 220);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center
@@ -59,6 +62,16 @@ body {
     height: 5px;
     background: #333;
     border-radius: 50%;
+}
+
+.box_time {
+    margin-top: 10px;
+}
+.full_time {
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+    color: #f2f2ea;
 }
 
 .btn_control_audio {
@@ -96,3 +109,6 @@ body {
     right: 2px;
 }
 
+.audio_seconds {
+    display: none;
+}
